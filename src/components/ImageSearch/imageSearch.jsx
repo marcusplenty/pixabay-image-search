@@ -19,6 +19,7 @@ const ImageSearch = () => {
       console.log(error);
     }
   };
+  
 
   return (
     <div>
@@ -31,8 +32,10 @@ const ImageSearch = () => {
       <button onClick={handleSearch}>Search</button>
 
       <div>
-        {images.map((image) => (
+      {images.map((image) => (
+          <Link key={image.id} to={`/image/${image.id}`}>
             <img src={image.previewURL} alt={image.tags} />
+          </Link>
         ))}
       </div>
     </div>
